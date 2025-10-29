@@ -14,5 +14,5 @@ spec:
         kind: HelmRepository
         name: nginx
   releaseName: nginx
-  namespace: nginx
+  targetNamespace: nginx
   interval: 1h # for drifting of helm created resources
