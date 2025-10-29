@@ -1,0 +1,17 @@
+# flux HelmRelease crd for installing nginx-ingress controller helm chart
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: nginx
+  namespace: nginx
+spec:
+  chart:
+    spec:
+      chart: nginx-ingress
+      version: 1.2.x
+      interval: 5h # for checking new chart versions
+      sourceRef:
+        kind: HelmRepository
+        name: nginx
+  releaseName: nginx
+  interval: 1h # for drifting of helm created resources
